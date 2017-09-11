@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<style>
+#university_logo_url {
+	width: 100px;
+}
+* {
+    text-align: center;
+}
+#signature_image_url {
+	width: 200px;
+}
+.card-block {
+    padding: 40px;
+}
+body {
+	background: <%= template_background_fill %>;
+}
+.half {
+	background: <%= template_background_fill %>;
+	width: 400px;
+}
+h3 {
+	font-size: 19px;
+}
+.half {
+    display: inline-block;
+    position: absolute;
+	margin-left: -400px;
+}
+.half.right-half {
+    margin-left: 0px;
+	margin-top: 0px;
+}
+.half.right-half * {
+    width: 100%;
+}
+</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="card">
+				<div class="half">
+						<div class="card-block">
+<img src="<%= university_logo_url %>" id="university_logo_url"/>
+<br>
+<p>Date: <%= date_string %></p>
+<h3><%= name_string %></h3>
+<p>Has successfully completed <% if (distinctions_flag_binary == 1) { %>with destinction<% } %></p>
+<h3><%= title_string %></h3>
+<p><%= description_string %></p>
+<br>
+<br>
+<br>
+<img src="<%= signature_image_url %>" id="signature_image_url"/>
+<h5><%= signature_block_string %></h5>
+						</div>
+				</div>
+				<div class="half right-half">
+						<div class="card-block">
+<img src="<%= issuing_logo_url %>"/>
+<br>
+<br>
+<% if (distinctions_flag_binary == 1) { %><h3>With Distinction</h3><% } %></p>
+<p>Verification Key: <%= verification_string %></p>
+						</div>
+				</div>
+			</div>
+		</div>
+	<body>
+</html>
